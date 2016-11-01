@@ -1,0 +1,63 @@
+var count = 0;
+var random = Math.floor((Math.random() * 10) + 1);
+    console.log(random);
+
+    setTimeout(start, 0);
+    function start(start) {
+        $("div").fadeOut(0);
+        $("div").fadeIn(600);
+    }
+
+function CheckNumber(i) {
+    if (i == random) {
+        $("#jso").fadeOut(0);
+        document.getElementById("jso").innerHTML = "Gefeliciteerd, je hebt het juiste getal geraden. Het juiste getal was " + random + ".";
+        $("#jso").fadeIn(400);
+        $("div").fadeOut();
+        setTimeout(eind, 2000);
+        setTimeout(reload, 3000);
+        return;
+    }
+
+        if (count <= 1) {
+            if (i <= random) {
+                $("#jso").fadeOut(0);
+                document.getElementById("jso").innerHTML = "Het juiste getal is hoger.";
+                $("#jso").fadeIn(400);
+            }
+
+             else {
+                $("#jso").fadeOut(0);
+                document.getElementById("jso").innerHTML = "Het juiste getal is lager";
+                $("#jso").fadeIn(400);
+            }
+                    $("div").fadeOut(400);
+                    setTimeout(fade, 1500)
+                    setTimeout(clear, 2000);
+
+        } else {
+            $("#jso").fadeOut(0);
+            document.getElementById("jso").innerHTML =  "Helaas, je hebt het getal niet kunnen raden. Het juiste getal was " + random + ".";
+            $("#jso").fadeIn(400);
+            $("div").fadeOut(400);
+            setTimeout(reload, 3000);
+        }       
+        count++;
+}
+
+function reload(reload){
+    window.location = "spel.html";
+}
+function eind(eind){
+    $("#jso").fadeOut(400);
+}
+
+function fade(fade){
+    $("#jso").fadeOut();
+}
+
+function clear(clear){
+    document.getElementById("jso").innerHTML = "&nbsp;";
+    $("div").fadeIn(400);
+    $("#jso").fadeIn(0);
+}

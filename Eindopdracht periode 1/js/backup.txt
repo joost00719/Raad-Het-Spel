@@ -1,0 +1,92 @@
+            //het id "jso" is waar de text komt te staan of je eronder, erboven, goed of fout had/zat.
+            //het div element is waar het keuzemenu in staat.
+
+
+//count is om de rondes bij te houden, zodat je maar 3 rondes kunt spelen.
+var count = 0;
+//Random Number Generator (het nummer wat je moet raden.)
+var random = Math.floor((Math.random() * 10) + 1);
+    console.log(random);
+
+//Dit laat het keuzemenu langzaam in het scherm komen.
+    setTimeout(start, 0);
+    function start(start) {
+        $("div").fadeOut(0);
+        $("div").fadeIn(1500);
+    }
+
+    //gaat met de button input (CheckNumber) aan de slag.
+function CheckNumber(i) {
+    //Kijken of het gegeven nummer (i) gelijk is aan het nummer wat geraden moet worden.
+    if (i == random) {
+        $("#jso").fadeOut(0);
+        document.getElementById("jso").innerHTML = "Gefeliciteerd, je hebt het juiste getal geraden. Het juiste getal was " + random + ".";
+        $("#jso").fadeIn(1000);
+        $("div").fadeOut();
+    //stuurt je door naar functie reload, 3seconde delay.
+        setTimeout(reload, 3000);
+    //stopt functie CheckNumber.
+        return;
+    }
+
+    //checkt of je nog een ronde mag spelen.
+        if (count <= 1) {
+    //kijkt of je gekozen getal onder het random nummer zit, en geeft feedback.
+            if (i <= random) {
+    //zorgd ervoor dat het element met id "jso" onzichtbaar wordt, dit is zodat hij later weer zichtbaar kan worden gemaakt.
+                $("#jso").fadeOut(0);
+    //de waarde van het html element met het id "jso" wordt aangepast.
+                document.getElementById("jso").innerHTML = "Het juiste getal is hoger.";
+    //zorgd ervoor dat het element met id "jso" weer zichtbaar wordt over een periode van 1seconde.
+                $("#jso").fadeIn(1000);
+            }
+
+    //kijkt of het gekozen getal boven het random nummer zit, en geeft feedback.
+             else {
+                $("#jso").fadeOut(0);
+                document.getElementById("jso").innerHTML = "Het juiste getal is lager";
+                $("#jso").fadeIn(1000);
+            }
+    //dit wordt altijd uitgevoert als één van deze twee if/else wordt uitgevoert ^^.
+    //Laat het keuzemenu langzaam verdwijnen.
+                    $("div").fadeOut(1000);
+    //verwijst door naar functie fade, 1,5seconde delay.
+                    setTimeout(fade, 1500)
+    //verwijst door naar functie clear, 2seconde delay.
+                    setTimeout(clear, 2000);
+
+    //als je door je rondes bent wordt dit uitgevoert.
+        } else {
+        //zorgd ervoor dat het element met id "jso" onzichtbaar wordt, dit is zodat hij later weer zichtbaar kan worden gemaakt.
+            $("#jso").fadeOut(0);
+        //de waarde van het html element met het id "jso" wordt aangepast.
+            document.getElementById("jso").innerHTML =  "Helaas, je hebt het getal niet kunnen raden. Het juiste getal was " + random + ".";
+        //zorgd ervoor dat het element met id "jso" weer zichtbaar wordt over een periode van 1seconde.
+            $("#jso").fadeIn(1000);
+        //laat het div element (keuzemenu) langzaam verdwijnen.
+            $("div").fadeOut(1000);
+        //verwijst door naar functie reload, 3seconde delay.
+            setTimeout(reload, 3000);
+        }       
+    //telt +1 bij var "count", dit is om te kijken hoeveel rondes je hebt gedaan.
+        count++;
+}
+
+//deze functie herlaadt de website.
+function reload(reload){
+    window.location = "spel.html";
+}
+
+//deze functie laat het element met id "jso" langzaam verdwijnen.
+function fade(fade){
+    $("#jso").fadeOut();
+}
+
+//deze functie vervangt de text in het element met het id "jso" voor een spatie.
+function clear(clear){
+    document.getElementById("jso").innerHTML = "&nbsp;";
+//laat het keuzemenu langzaam terug komen.
+    $("div").fadeIn(1000);
+//laat het element met het id "jso" instantly terug komen.
+    $("#jso").fadeIn(0);
+}
