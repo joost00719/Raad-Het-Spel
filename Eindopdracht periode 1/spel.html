@@ -9,6 +9,10 @@
         -->
 	</head>
 	<body>
+
+        <h1 hidden>
+            Welkom bij Raad het Getal, Gemaakt door Joost Roza
+        </h1>
         <img src="opmaak/pictures/dice.png" alt="dice" class="dice">
             <h1 id="rhg">
             	<sup>&nbsp;Raad het getal</sup>
@@ -16,11 +20,18 @@
         <img src="opmaak/pictures/dice.png" alt="dice" class="dice">
             <p id="jso">
                 &nbsp;
-            </p>               
+            </p>
+            <img src="opmaak/pictures/congratulations.gif" id="gzzz" alt="congratulations" hidden>
+            <img src="opmaak/pictures/text.gif" id="failed" width="200px" height="75" alt="fail" hidden>
             <p id="blanc">
             
             </p>
-        <div id="bttn">
+
+
+
+
+        <!--968px-->
+        <div id="div" hidden>
         <table>
         <tr>
                 <td><button class="buttons" id="button1" value="1" onclick="CheckNumber(1)">1</button></td>
@@ -41,10 +52,57 @@
         </div>
 
         <h2 id="count">
-        Ronde: 1
+        poging: 1
         </h2>
+
+
+        <div id="footer">
+            <p id="help" onclick="helpmenu()">
+                Help
+            </p>
+            <p id="meer" onclick="meermenu()">
+                meer
+            </p>
+        </div>
+        <div id="helpmenu" hidden>
+            <h1>
+                Help
+            </h1>
+            <p>
+                De bedoeling van het spel is dat jij binnen 3 pogingen raadt welk getal de computer in gedachte heeft.
+                    <br>
+                Je kunt je keuze doormiddel van de groene knoppen invoeren, je hebt totaal drie kansen om het goed te raden.
+                    <br>
+                Na de 3 pogingen neemt de computer een ander getal in gedachte en kun je het opnieuw proberen.
+
+            </p>
+            <button class="sluit" onclick="sluithelp()">Sluit</button>
+        </div>
+
+        <div id="meermenu" hidden>
+            <h1>
+                Meer
+            </h1>
+            <p>
+                Welkom bij Raad Het Getal. Gemaakt door Joost Roza.
+                <br>
+            <p id="scherm">
+                (De site werkt het beste op een 1080p scherm in Google Chrome.)
+            </p>
+            <p id="cr2">
+            &copy;2016 Joost Roza
+                <br>
+            All Rights Reserved.
+            </p>
+
+
+            </p>
+            <button class="sluit" onclick="sluitmeer()">Sluit</button>
+        </div>
+
+
         <p id="cr">
-            Copyright 2016 &copy;JoostR
+            &copy; 2016 Joost Roza
         <br>
             All Rights Reserved.
         </p>

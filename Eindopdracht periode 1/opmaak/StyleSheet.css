@@ -20,7 +20,7 @@ button{
 #button10 {
     padding: 50px 61px;
 }
-#bttn {
+#div {
     display: inline-block;
     background-color: #2e2e2e;
     padding-top: 20px;
@@ -40,7 +40,6 @@ button:hover{
 }
 h1{
     font-family: 'coco';
-    
 }
 
 #rhg{
@@ -77,6 +76,61 @@ h1{
     position: fixed;
     left: 10px;
     top: 920px;
-    z-index: -1;
     font-size: 10px;
 }
+#footer{
+    color: white;
+    background-color: #2e2e2e;
+    word-spacing: 40px;
+    display: inline-block;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 5px;
+    position: fixed;
+    left: 1670px;
+    top: 850px;
+}
+#help, #meer{
+    display: inline-block;
+    font-size: 32px;
+    color: white;
+    text-align: center;
+}
+#help:hover, #meer:hover{
+    color: #828282;
+    cursor: pointer;
+    
+}
+#helpmenu{
+    color: white;
+    background-color: #2e2e2e;
+    display: inline-block;
+    padding-left: 75px;
+    padding-right: 75px;
+    border-radius: 5px;
+    position: fixed;
+    left: 535px;
+    top: 410px;
+}
+#meermenu{
+    color: white;
+    background-color: #2e2e2e;
+    display: inline-block;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 5px;
+    position: fixed;
+    left: 730px;
+    top: 395px;
+}
+#cr2{
+    text-align: left;
+}
+#scherm{
+    font-size: 8px;
+    text-align: left;
+}
+.sluit{
+    padding: 0px;
+}
+<!--968px-->
